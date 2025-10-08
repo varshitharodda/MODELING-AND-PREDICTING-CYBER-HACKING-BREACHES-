@@ -1,0 +1,22 @@
+CREATE TABLE UserRegister_Model (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(30),
+    password VARCHAR(10),
+    phoneno VARCHAR(15),
+    address VARCHAR(500)
+);
+
+CREATE TABLE UserAdd_Model (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    uregid_id INT,
+    entity VARCHAR(100),
+    year INT,
+    records VARCHAR(1000),
+    organizationtype VARCHAR(1000),
+    method VARCHAR(100),
+    adddata VARCHAR(500),
+    attackresult VARCHAR(500),
+    time VARCHAR(100),
+    FOREIGN KEY (uregid_id) REFERENCES UserRegister_Model(id) ON DELETE CASCADE
+);
